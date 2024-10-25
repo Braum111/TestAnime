@@ -29,14 +29,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/frame_rate_options"
-            android:minHeight="48dp" />
+            android:prompt="@string/select_frame_rate" />
 
         <Spinner
             android:id="@+id/spinner_frames_per_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/frames_per_image_options"
-            android:minHeight="48dp" />
+            android:prompt="@string/select_frames_per_image" />
         <!-- Кнопка воспроизведения видео -->
         <Button
             android:id="@+id/button_play_video"

@@ -63,9 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/frame_rate_options"
-            android:minHeight="48dp"
-            android:prompt="Выберите частоту кадров"
-            tools:ignore="HardcodedText" />
+            android:prompt="@string/select_frame_rate" />
         <!-- Спиннер для выбора количества кадров на изображение -->
         <TextView
             android:layout_width="wrap_content"
@@ -78,9 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/frames_per_image_options"
-            android:minHeight="48dp"
-            android:prompt="Выберите количество кадров на изображение"
-            tools:ignore="HardcodedText" />
+            android:prompt="@string/select_frames_per_image" />
 
         <!-- Кнопка воспроизведения видео -->
         <Button
