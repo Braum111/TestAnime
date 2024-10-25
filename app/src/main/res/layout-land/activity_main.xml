@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!-- Левая панель: список изображений и кнопка выбора изображений -->
+
+    <LinearLayout
+        android:layout_width="378dp"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Кнопка дублирования изображений -->
+        <Button
+            android:id="@+id/button_duplicate_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Дублировать изображения" />
+
+        <!-- Спиннер для выбора частоты кадров -->
+
+
+        <Spinner
+            android:id="@+id/spinner_frame_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/frame_rate_options"
+            android:minHeight="48dp" />
+
+        <Spinner
+            android:id="@+id/spinner_frames_per_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/frames_per_image_options"
+            android:minHeight="48dp" />
+        <!-- Кнопка воспроизведения видео -->
+        <Button
+            android:id="@+id/button_play_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Воспроизвести видео" />
+
+        <Button
+            android:id="@+id/buttonSaveVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Сохранить видео" />
+
+        <Button
+            android:id="@+id/button_select_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="Выбрать изображения" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Верхняя часть: RecyclerView для отображения выбранных изображений -->
+
+        <!-- Нижняя часть: Кнопка выбора изображений -->
+
+        <FrameLayout
+            android:layout_width="887dp"
+            android:layout_height="172dp"
+            android:layout_weight="1"
+            android:padding="8dp">
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="271dp"
+                android:layout_height="244dp"
+                android:visibility="visible" />
+
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewImages"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <!-- Центральная панель: кнопки и спиннеры -->
+
+    <!-- Правая панель: VideoView для отображения видео -->
+
+</LinearLayout>

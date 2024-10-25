@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <!-- Левая панель: список изображений и кнопка выбора изображений -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Верхняя часть: RecyclerView для отображения выбранных изображений -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewImages"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            tools:ignore="NestedWeights" />
+
+        <!-- Нижняя часть: Кнопка выбора изображений -->
+        <Button
+            android:id="@+id/button_select_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выбрать изображения"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <!-- Центральная панель: кнопки и спиннеры -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:gravity="center_horizontal">
+
+        <!-- Кнопка дублирования изображений -->
+        <Button
+            android:id="@+id/button_duplicate_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Дублировать изображения"
+            android:layout_marginTop="8dp" />
+
+        <!-- Спиннер для выбора частоты кадров -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Частота кадров (fps):"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/spinner_frame_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/frame_rate_options"
+            android:minHeight="48dp"
+            android:prompt="Выберите частоту кадров"
+            tools:ignore="HardcodedText" />
+        <!-- Спиннер для выбора количества кадров на изображение -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Кадров на изображение:"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/spinner_frames_per_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/frames_per_image_options"
+            android:minHeight="48dp"
+            android:prompt="Выберите количество кадров на изображение"
+            tools:ignore="HardcodedText" />
+
+        <!-- Кнопка воспроизведения видео -->
+        <Button
+            android:id="@+id/button_play_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Воспроизвести видео"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/buttonSaveVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сохранить видео"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+    <!-- Правая панель: VideoView для отображения видео -->
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="325dp"
+        android:layout_weight="1"
+        android:padding="8dp">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</LinearLayout>
